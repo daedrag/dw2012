@@ -17,7 +17,9 @@ public class MainActivity extends Activity implements OnClickListener{
         setContentView(R.layout.activity_main);
        
         Button btnCamera = (Button) findViewById(R.id.buttonCamera);
+        Button btnCameraForOverlay = (Button) findViewById(R.id.buttonCameraOverlay);
         btnCamera.setOnClickListener(this);
+        btnCameraForOverlay.setOnClickListener(this);
                
     }
 
@@ -27,6 +29,10 @@ public class MainActivity extends Activity implements OnClickListener{
 		case R.id.buttonCamera:
 			Intent cameraIntent = new Intent(MainActivity.this, CameraActivity.class);
 			startActivity(cameraIntent);
+			break;
+		case R.id.buttonCameraOverlay:
+			Intent cameraIntent2 = new Intent(MainActivity.this, CameraActivityForOverlay.class);
+			startActivity(cameraIntent2);
 			break;
 		default:
 			break;
