@@ -9,37 +9,39 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 
-public class CameraActivity extends Activity implements OnClickListener{
+public class CameraActivity extends Activity implements OnClickListener {
 	private static final int CAMERA_REQUEST = 1888;
 	private ImageView imageView;
-	
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main);
+		setContentView(R.layout.activity_camera);
 		this.imageView = (ImageView) this.findViewById(R.id.imageView1);
 		Button photoButton = (Button) this.findViewById(R.id.button1);
 		photoButton.setOnClickListener(this);
 	}
-	
-	
-	public void onClick(View v)
-	{
-		switch (v.getId()){
+
+	public void onClick(View v) {
+		switch (v.getId()) {
 		case R.id.button1:
 			Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
 			startActivityForResult(cameraIntent, CAMERA_REQUEST);
 			break;
 		default:
-			break;
+			
 		}
-		
+
 	}
-	protected void onActivityResult(int requestCode, int resultCode, Intent data) {  
-        if (requestCode == CAMERA_REQUEST) {  
-            Bitmap photo = (Bitmap) data.getExtras().get("data"); 
-            imageView.setImageBitmap(photo);
-        }  
-    } 
+
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if (requestCode == CAMERA_REQUEST) {
+			if (resultCode == Activity.RESULT_OK) {
+				Bitmap photo = (Bitmap) data.getExtras().get("data");
+				imageView.setImageBitmap(photo);
+			}
+			else if (resultCode == Activity.RESULT_CANCELED){}
+		}
+	}
 
 }

@@ -23,12 +23,9 @@
         </activity>
         
         <activity 
-            android:name=".PreviewDemo">
-            <!-- <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter> -->
+            android:name=".CameraActivity"
+            android:label="@string/title_activity_camera">
+            
         </activity>
 
     </application>
