@@ -21,11 +21,7 @@ public class CameraActivity extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        
-		setContentView(R.layout.activity_camera);
-		this.imageView = (ImageView) this.findViewById(R.id.imageView1);
-		Button photoButton = (Button) this.findViewById(R.id.button1);
-		photoButton.setOnClickListener(this);
+        setContentView(new MainGamePanel(this));
 	}
 
 	public void onClick(View v) {
