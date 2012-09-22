@@ -39,8 +39,7 @@ public class MainActivity extends Activity implements OnClickListener{
 		}
 
 	}
-    
-    
+       
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_main, menu);
