@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.Button;
+import android.view.WindowManager;
 
 public class MainActivity extends Activity implements OnClickListener{
 	
@@ -14,6 +16,7 @@ public class MainActivity extends Activity implements OnClickListener{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
         setContentView(R.layout.activity_main);
        
         Button btnCamera = (Button) findViewById(R.id.buttonCamera);
